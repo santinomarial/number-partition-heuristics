@@ -1,0 +1,11 @@
+# Compiled objects and binary
+*.o
+*.d
+partition
+
+# Editor / OS artifacts
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
