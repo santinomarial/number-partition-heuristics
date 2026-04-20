@@ -18,6 +18,10 @@ A function $p : \{0,\ldots,n{-}1\} \to \{0,\ldots,n{-}1\}$ maps each element to 
 
 ---
 
+## Karmarkar-Karp Algorithm
+
+The Karmarkar-Karp (KK) algorithm is a greedy differencing heuristic for number partition. The core intuition is that two large numbers contribute less to the final residue if their difference, rather than both values, propagates forward — so at each step, the algorithm replaces the two largest remaining elements with their absolute difference. This greedily shrinks the largest imbalance first. A max-heap makes every step O(log n): extracting the two largest elements and reinserting their difference each cost O(log n), giving an overall O(n log n) runtime for n elements. KK is not optimal in general but produces remarkably good solutions in practice, and its output is used as a subroutine by the prepartition-based heuristics.
+
 ## Algorithm Codes
 
 | Code | Representation  | Algorithm              |

@@ -10,7 +10,16 @@ $(TARGET): $(OBJS)
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-clean:
-	rm -f $(OBJS) $(TARGET)
+TEST_BIN := tests/test_kk
+TEST_SRC := tests/test_kk.cpp kk.cpp
 
-.PHONY: clean
+test: $(TEST_BIN)
+	./$(TEST_BIN)
+
+$(TEST_BIN): $(TEST_SRC)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+clean:
+	rm -f $(OBJS) $(TARGET) $(TEST_BIN)
+
+.PHONY: clean test
